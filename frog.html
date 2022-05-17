@@ -1,0 +1,117 @@
+<!DOCTYPE HTML>
+<!--
+	Phantom by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Joonatan L. | Portfolio</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+		<meta name="robots" content="noindex">
+	</head>
+	<body class="is-preload">
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Header -->
+					<header id="header">
+						<div class="inner">
+
+							<!-- Logo -->
+								<a href="index.html" class="logo">
+									<span class="symbol"><img src="images/logo.svg" alt="" /></span><span class="title">orikome.github.io</span>
+								</a>
+
+							<!-- Nav -->
+								<nav>
+									<ul>
+										<li><a href="#menu">Menu</a></li>
+									</ul>
+								</nav>
+
+						</div>
+					</header>
+
+				<!-- Menu -->
+				<nav id="menu">
+					<h2>Menu</h2>
+					<ul>
+						<li><a href="index.html">Home</a></li>
+						<li><a href="tahtivr.html">Tahti VR</a></li>
+						<li><a href="nighttrain.html">Night Train VR</a></li>
+						<li><a href="multiplicationgame.html">Multiplication Game</a></li>
+						<li><a href="sushi.html">Conveyor Belt Sushi</a></li>
+						<li><a href="shooter.html">Endless Shooter Prototype</a></li>
+					</ul>
+				</nav>
+
+				<!-- Main -->
+					<div id="main">
+						<div class="inner">
+							<h1>Frog Game (2022)</h1>
+							<span class="image main"><img src="media/frog/banner.jpg" alt="" /></span>
+							<p>A fast-paced VR rhythm game where you shoot targets and dodge incoming obstacles to the beat of the music. 
+								The game is going to be released on Steam in late 2022, it started as a part of a course in school. 
+								It is the product of 4 people, and my main role was to create visualizations that react to the music.</p>
+								<h3>Gameplay &amp; Code Example</h3>
+									<p><span class="image left"><img src="media/frog/pic.png" alt="" /></span>
+										Fringilla nisl. Donec accumsan interdum nisi, quis tincidunt felis sagittis eget. tempus euismod. Vestibulum ante ipsum primis in faucibus vestibulum.
+										Fringilla nisl. Donec accumsan interdum nisi, quis tincidunt felis sagittis eget. tempus euismod. Vestibulum ante ipsum primis in faucibus vestibulum.
+									</p>
+								<pre><code>void Update()
+{
+clock += Time.deltaTime * rotDir;
+_timer += Time.deltaTime;
+if (_timer > spawnDelay)
+	{
+	GameObject obj = ObjectPooler.instance.GetPooledObject();
+	if (obj != null)
+	{
+		obj.transform.SetParent(gameObject.transform);
+		obj.transform.position = spawnPos;
+		obj.SetActive(true);
+	}
+								
+	obj.GetComponent<MoveForward>().audioSpawner = this;
+	_timer = 0f;
+
+
+
+	
+}</code></pre>	
+							
+						</div>
+					</div>
+
+				<!-- Footer -->
+				<footer id="footer">
+					<div class="inner">
+						<section>
+							<h2>CONTACT</h2>
+							<ul class="icons">
+								<li><a href="https://www.github.com/orikome/" class="icon brands style2 fa-github"><span class="label">GitHub</span></a></li>
+								<li><a href="https://www.instagram.com/kokemomoart/" class="icon brands style2 fa-instagram"><span class="label">Instagram</span></a></li>
+								<li><a href="mailto:joonatanliljanto@kamk.fi" class="icon solid style2 fa-envelope"><span class="label">Email</span></a></li>
+							</ul>
+						</section>
+						<ul class="copyright">
+							<li>&copy; 2022 Joonatan L.</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+						</ul>
+					</div>
+				</footer>
+
+			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>

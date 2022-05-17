@@ -1,0 +1,131 @@
+<!DOCTYPE HTML>
+<!--
+	Phantom by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Joonatan L. | Portfolio</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+		<meta name="robots" content="noindex">
+	</head>
+	<body class="is-preload">
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Header -->
+					<header id="header">
+						<div class="inner">
+
+							<!-- Logo -->
+								<a href="index.html" class="logo">
+									<span class="symbol"><img src="images/logo.svg" alt="" /></span><span class="title">orikome.github.io</span>
+								</a>
+
+							<!-- Nav -->
+								<nav>
+									<ul>
+										<li><a href="#menu">Menu</a></li>
+									</ul>
+								</nav>
+
+						</div>
+					</header>
+
+				<!-- Menu -->
+				<nav id="menu">
+					<h2>Menu</h2>
+					<ul>
+						<li><a href="index.html">Home</a></li>
+						<li><a href="tahtivr.html">Tahti VR</a></li>
+						<li><a href="nighttrain.html">Night Train VR</a></li>
+						<li><a href="multiplicationgame.html">Multiplication Game</a></li>
+						<li><a href="sushi.html">Conveyor Belt Sushi</a></li>
+						<li><a href="shooter.html">Endless Shooter Prototype</a></li>
+					</ul>
+				</nav>
+
+				<!-- Main -->
+					<div id="main">
+						<div class="inner">
+							<h1>Night Train VR (2022)</h1>
+							<span class="image main"><img src="media/nighttrain/banner.jpg" alt="" /></span>
+							<p>Night Train is a linear horror-puzzle VR game experienced in the cabin of a train.
+								It was part of a school course and was finished with a group of 7 people.
+								We managed to create around 20 minutes of gameplay, which follows a storyline filled with puzzles and horror elements.
+								I made an endlessly generating scenery for the game, programmed a few individual gameplay mechanics, and created a few 3D-models.
+							</p>
+								<h3>Endlessly generating scenery</h3>
+									<p>
+										The way the endless scenery works is by giving an illusion of a moving environment, meaning the train itself doesn't actually move.
+										Tiles filled with randomly positioned trees and rocks are spawned in and they start moving forward, which makes it seem like the train is moving.
+										These tiles are then despawned as they move further away from the player and new tiles are spawned in.
+									</p>
+								</br>
+								<p>
+									Below is a function that is used by the endless generator to spawn in tiles.
+								</p>
+								<pre><code>public void SpawnTile(int amount)
+    {
+        for (int i = 0; i < amount; i++)
+        {
+            if(curTilesAmount < maxTileAmount) //tiles are only spawned in if there is space
+            {
+                    GameObject clone = Instantiate(forestTiles[Random.Range(0, forestTiles.Length)],
+                    				   new Vector3(nextSpawnPoint.position.x, nextSpawnPoint.position.y,
+						   nextSpawnPoint.position.z - errorMargin),
+                    				   Quaternion.identity);
+                    curTiles.Add(clone);  //add the tile object to a list
+                    tilesSpawnedAmount++;
+                    clone.name = "Block " + tilesSpawnedAmount;
+                    GetNextSpawnPoint(); //next spawn point is pulled from the block spawned before
+            }
+        }
+    }
+</code></pre>
+<h3>Storyline</h3>
+<p>
+	The game begins inside a train cabin and you hear an announcement related to your trip.
+	After this, you are greeted by the train conductor who asks you for your student card.
+	After a while, a grandma next door starts up a conversation with you, and suggests you listen to the radio.
+	After turning on the radio and hearing something odd coming from one of the channels, unusual things start to happen...
+</p>
+<div class ="imgbox">
+	<iframe class ="center-fit" width="1340" height="720" src="https://www.youtube.com/embed/0uNDhD6yQZw" title="YouTube Video Player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe><br>
+</div>
+							
+						</div>
+					</div>
+
+				<!-- Footer -->
+				<footer id="footer">
+					<div class="inner">
+						<section>
+							<h2>CONTACT</h2>
+							<ul class="icons">
+								<li><a href="https://www.github.com/orikome/" class="icon brands style2 fa-github"><span class="label">GitHub</span></a></li>
+								<li><a href="https://www.instagram.com/kokemomoart/" class="icon brands style2 fa-instagram"><span class="label">Instagram</span></a></li>
+								<li><a href="mailto:joonatanliljanto@kamk.fi" class="icon solid style2 fa-envelope"><span class="label">Email</span></a></li>
+							</ul>
+						</section>
+						<ul class="copyright">
+							<li>&copy; 2022 Joonatan L.</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+						</ul>
+					</div>
+				</footer>
+
+			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>
